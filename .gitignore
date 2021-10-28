@@ -1,7 +1,7 @@
 not_needed/
 .ipynb_checkpoints/
-walks.csv/
-runs.csv/
-clean_walks.csv/
-clean_runs.csv/
-leaflet_mix.html/
+csvs/walks.csv/
+csvs/runs.csv/
+csvs/clean_walks.csv/
+csvs/clean_runs.csv/
+templates/leaflet_mix.html/
