@@ -1,2 +1,7 @@
-config_personal.json
+not_needed/
 .ipynb_checkpoints/
+walks.csv/
+runs.csv/
+clean_walks.csv/
+clean_runs.csv/
+leaflet_mix.html/
