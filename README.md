@@ -1,4 +1,6 @@
 >![](thumbnails/KA-run.jpg)
+>![](thumbnails/KA-walk.jpg)
+>![](thumbnails/VT-run.jpg)
 
 # strava_running
 Tutorial to follow: </br>
