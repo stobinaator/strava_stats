@@ -2,6 +2,11 @@
 >![](thumbnails/KA-walk.jpg)
 >![](thumbnails/VT-run.jpg)
 
+>![](thumbnails/avg_speed_dist.jpg)
+>![](thumbnails/max_speed_dist.jpg)
+>![](thumbnails/coutplot_runs.jpg)
+>![](thumbnails/barplot_activities.jpg)
+
 ## tutorials
 Tutorial to follow: </br>
 https://towardsdatascience.com/using-the-strava-api-and-pandas-to-explore-your-activity-data-d94901d9bfde </br>
