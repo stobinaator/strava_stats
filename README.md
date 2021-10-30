@@ -4,7 +4,7 @@
 
 >![](thumbnails/avg_speed_dist.jpg)
 >![](thumbnails/max_speed_dist.jpg)
->![](thumbnails/coutplot_runs.jpg)
+>![](thumbnails/countplot_runs.jpg)
 >![](thumbnails/barplot_activities.jpg)
 
 ## tutorials
