@@ -15,14 +15,13 @@ https://www.youtube.com/watch?v=2FPNb1XECGs&list=PLO6KswO64zVvcRyk0G0MAzh5oKMLb6
 
 ## strava_running
 - Tries getting 99 pages each with 200 activities. (if so many exist)</br>
-- Dataset is converted to a Pandas DataFrame and columns are renamed and certain values converted. </br>
+- Original raw DataFrame is saved to a .csv file. </br>
+- `Run` & `Walk` are filtered and saved raw. </br>
+- Cleanup run/walk and save again. Activities dataset is converted to a Pandas DataFrame and columns are renamed and certain values converted. </br>
 - After the cleanup process only a certain amount of columns are taken for the next step (this can be easily changed).</br>
-- The cleaned DataFrame is saved to a .csv file.
+- The cleaned DataFrame is saved to a .csv file. </br>
+- Data is again read and visualized with different kind of graphs (seaborn) </br>
 
-## get_all_run_walk_activities
-- Gets 99 pages each with 200 activities. (if so many exist) </br>
-- Only the `Run` and `Walk` activities are taken where the main information is `activity_id` and `summary_polyline` of the map and saved to a csv file. </br>
-- Drop some rows that have no meaningful information in them, save the cleaned DFs to new .csv files.
 
 ## leaflet_walk.html / leaflet_run.html 
 - these 2 files are visualizing the information that is being taken from the .csv files with the help of `app.py` file.
