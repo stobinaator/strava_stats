@@ -11,24 +11,24 @@ app = Flask(__name__)
 @app.route('/runs')
 def my_runs():
     runs = []
-    with open(f"{cd}/csvs/clean_runs.csv", "r") as runs_file:
+    with open(f"{cd}/csvs/clean/runs.csv", "r") as runs_file:
         reader = csv.DictReader(runs_file)
 
         for row in reader:
-            runs.append(row["polyline"])
+            runs.append(row["map.summary_polyline"])
 
     return render_template("leaflet_run.html", runs = json.dumps(runs))
 
 @app.route('/walks')
 def my_walks():
     walks = []
-    with open(f"{cd}/csvs/clean_walks.csv", "r") as walks_file:
+    with open(f"{cd}/csvs/clean/walks.csv", "r") as walks_file:
         #reader_walks = csv.reader(walks_file, delimiter=',')
         reader_walks = csv.DictReader(walks_file)
 
         for row in reader_walks:
             #walks.append(row[1])
-            walks.append(row["polyline"])
+            walks.append(row["map.summary_polyline"])
 
     return render_template("leaflet_walk.html", walks = json.dumps(walks))
 
