@@ -2,8 +2,8 @@
 >![](thumbnails/KA-walk.jpg)
 >![](thumbnails/VT-run.jpg)
 
->![](thumbnails/relplot_run.jpg)
->![](thumbnails/violinplot_run.jpg)
+>![](thumbnails/relplot_run.png)
+>![](thumbnails/violinplot_run.png)
 >![](thumbnails/max_speed_dist.jpg)
 >![](thumbnails/countplot_runs.jpg)
 >![](thumbnails/barplot_activities.jpg)
