@@ -28,5 +28,9 @@ https://www.youtube.com/watch?v=2FPNb1XECGs&list=PLO6KswO64zVvcRyk0G0MAzh5oKMLb6
 - To start the Flask instance - run in terminal `python app.py`. </br>
 - Open your browser http://127.0.0.1:5001/X , X can be runs or walks. </br>
 
+## NEW
+- 2 buttons, one for Veliko Tarnovo and one for Karlsruhe. It just saves time dragging from one location to another, and vice-versa. </br>
+
 ## TODO
-1. overlay all run and walk workouts with different colors.
+1. Add a drop-down menu named 'Locations' and when clicked it will show both (now existing) buttons.</br>
+overlay all run and walk workouts with different colors.

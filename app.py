@@ -32,23 +32,5 @@ def my_walks():
 
     return render_template("leaflet_walk.html", walks = json.dumps(walks))
 
-@app.route('/both')
-def my_activities():
-    runs = []
-    walks = []
-    with open(f"{cd}/csvs/clean_runs.csv", "r") as runs_file, open(f"{cd}/csvs/clean_runs.csv", "r") as walks_file:
-        r_reader = csv.DictReader(runs_file)
-        w_reader = csv.DictReader(walks_file)
-
-        for row in r_reader:
-            runs.append(row["polyline"])
-
-        for row in w_reader:
-            walks.append(row["polyline"])
-
-
-    return render_template("leaflet_mix.html", runs = json.dumps(runs), walks = json.dumps(walks))
-
-
 if __name__ == "__main__":
     app.run(port = 5001)
