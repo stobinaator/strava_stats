@@ -1,0 +1,55 @@
+#map{
+  top: 8px;
+}
+
+.buttonVT {
+  position: absolute;
+  left:700px;
+  top: 12px;
+  background-color: #D233FF;
+  color: white;
+  border: 2px solid #D233FF;
+  width: 42px;
+  height: 36px;
+  font-size: 15px;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.buttonVT:hover {
+  background-color: white;
+  color: black;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.buttonVT:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(2px);
+}
+
+.buttonKA {
+  position: absolute;
+  left:640px;
+  top:12px;
+  background-color: #3376FF;
+  color: white;
+  border: 2px solid #3376FF;
+  width: 42px;
+  height: 36px;
+  font-size: 15px;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.buttonKA:hover {
+  background-color: white;
+  color: black;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.buttonKA:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(2px);
+}

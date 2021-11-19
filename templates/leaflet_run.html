@@ -7,18 +7,20 @@
     <script src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js"></script>
     <script type="text/javascript" src="https://rawgit.com/jieter/Leaflet.encoded/master/Polyline.encoded.js"></script>
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css" />
-    
-    <button id="b1" onclick="vtFunction()">VT</button>
-    <button id="b2" onclick="kaFunction()">KA</button>
+    <link href="/static/style.css" rel="stylesheet" type="text/css" />
 
+    <img src="/static/strava-2.png" alt="Strava Logo" width="40" height="38">
+    <button class="buttonVT" onclick="vtFunction()">VT</button>
+    <button class="buttonKA" onclick="kaFunction()">KA</button>
+    
     <nav id="nav" class="nav-main">
-      <div id="map" style="width: 100%; height: 97%"></div>
+      <div id="map" style="width: 100%; height: 94%"></div>
     </nav>
 
     <script>
       var map = L.map('map');
-      let vt_coords = {north : 43.0757, east : 25.6172};
-      let ka_coords = Object.freeze({north : 48.9930, east : 8.4045});
+      let vt_coords = {north : 43.0757, east : 25.6230};
+      let ka_coords = {north : 48.9960, east : 8.4045};
 
       let vtFunction = function(){
         this.map.setView([vt_coords.north, vt_coords.east], 15);
