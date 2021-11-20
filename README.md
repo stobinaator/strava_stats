@@ -29,9 +29,10 @@ https://www.youtube.com/watch?v=2FPNb1XECGs&list=PLO6KswO64zVvcRyk0G0MAzh5oKMLb6
 - Open your browser http://127.0.0.1:5001/X , X can be runs or walks. </br>
 
 ## NEW
-- 2 buttons, one for Veliko Tarnovo and one for Karlsruhe. It just saves time dragging from one location to another, and vice-versa. </br>
+- Locations drop-down menu with 2 buttons, one for Veliko Tarnovo and one for Karlsruhe. It just saves time dragging from one location to the other, and vice-versa.</br>
+- 2 new buttons. Walks/Runs, each one appears next to the drop-down menu. Redirects automatically instead of changing the link manually</br>
 
 ## TODO
 1. Add a drop-down menu named 'Locations' and when clicked it will show both (now existing) buttons.</br>
-2. Add a button 'Walks', when clicked it will redirect the page to "../walks". 'Runs' button is also needed.</br>
+
 overlay all run and walk workouts with different colors.

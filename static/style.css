@@ -2,16 +2,75 @@
   top: 8px;
 }
 
-.buttonVT {
-  position: absolute;
-  left:700px;
-  top: 12px;
-  background-color: #D233FF;
+.imgContainer{
+  float:left;
+}
+
+.stats-logo {
+  left: 35px;
+}
+
+.drop-span {
+  background-color: #33E9FF;
   color: white;
-  border: 2px solid #D233FF;
-  width: 42px;
-  height: 36px;
-  font-size: 15px;
+  padding: 10px 15px 10px 16px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.dropdown {
+  top: 10px;
+  left: 560px;
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  top: 30px;
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #33E9FF;
+  border-radius: 8px;
+  width: 100px;
+  height: 100%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content button {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content .buttonVT:hover {
+  background-color: #FF33E9;
+}
+
+.dropdown-content .buttonKA:hover {
+  background-color: #ECFF33;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .drop-span {
+  background-color: white;
+  color:black;
+}
+
+.buttonVT {
+  position:relative;
+  color: white;
+  width: 100px;
+  border-radius: 8px;
+  border: 1px solid black;
+  font-size: 14px;
   transition: 0.4s;
   cursor: pointer;
 }
@@ -23,20 +82,16 @@
 }
 
 .buttonVT:active {
-  background-color: #3e8e41;
+  background-color: white;
   box-shadow: 0 5px #666;
-  transform: translateY(2px);
 }
 
 .buttonKA {
-  position: absolute;
-  left:640px;
-  top:12px;
-  background-color: #3376FF;
+  position:relative;
   color: white;
-  border: 2px solid #3376FF;
-  width: 42px;
-  height: 36px;
+  width: 100px;
+  border-radius: 8px;
+  border: 1px solid black;
   font-size: 15px;
   transition: 0.4s;
   cursor: pointer;
@@ -49,7 +104,68 @@
 }
 
 .buttonKA:active {
-  background-color: #3e8e41;
+  background-color: white;
+  box-shadow: 0 5px #666;
+}
+
+.buttonWalks{
+  position: absolute;
+  left: 760px;
+  top: 8px;
+  padding: 10px;
+  background-color: #5BFF33;
+  color: white;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 15px;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.buttonWalks:hover {
+  background-color: white;
+  color: black;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.buttonWalks:active {
+  background-color: white;
   box-shadow: 0 5px #666;
   transform: translateY(2px);
+}
+
+.buttonWalks a {
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.buttonRuns{
+  position: absolute;
+  left: 760px;
+  top: 10px;
+  padding: 10px;
+  background-color: #338AFF;
+  color: white;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 15px;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.buttonRuns:hover {
+  background-color: white;
+  color: black;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.buttonRuns:active {
+  background-color: white;
+  box-shadow: 0 5px #666;
+  transform: translateY(2px);
+}
+
+.buttonRuns a {
+  text-decoration: none;
+  text-transform: uppercase;
 }
