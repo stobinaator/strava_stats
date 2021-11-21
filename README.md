@@ -20,7 +20,7 @@ https://www.youtube.com/watch?v=2FPNb1XECGs&list=PLO6KswO64zVvcRyk0G0MAzh5oKMLb6
 3. run `jupyter notebook` to run `strava_activities.ipynb`.
 4. when you have clean run.csv and walk.csv files you can move further.
 5. to start the Flask instance - run in terminal `python app.py`.
-6. open your browser http://127.0.0.1:5001/runs.
+6. open your browser http://127.0.0.1:5001/.
 
 ## strava_activities.ipynb
 - Getting a couple of pages, each with 200 activities.</br>

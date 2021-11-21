@@ -8,6 +8,7 @@ cd = os.path.abspath(os.getcwd())
 
 app = Flask(__name__)
 
+@app.route('/')
 @app.route('/runs')
 def my_runs():
     runs = []
@@ -23,14 +24,12 @@ def my_runs():
 def my_walks():
     walks = []
     with open(f"{cd}/csvs/clean/walks.csv", "r") as walks_file:
-        #reader_walks = csv.reader(walks_file, delimiter=',')
         reader_walks = csv.DictReader(walks_file)
 
         for row in reader_walks:
-            #walks.append(row[1])
             walks.append(row["map.summary_polyline"])
 
     return render_template("leaflet_walk.html", walks = json.dumps(walks))
 
 if __name__ == "__main__":
-    app.run(port = 5001)
+    app.run(port = 5001, debug=True)
