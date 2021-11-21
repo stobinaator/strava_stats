@@ -11,7 +11,7 @@
 }
 
 .drop-span {
-  background-color: #33E9FF;
+  background-color: black;
   color: white;
   padding: 10px 15px 10px 16px;
   font-size: 16px;
@@ -32,7 +32,7 @@
   display: none;
   position: absolute;
   right: 0;
-  background-color: #33E9FF;
+  background-color: #FFAF33;
   border-radius: 8px;
   width: 100px;
   height: 100%;
@@ -48,11 +48,11 @@
 }
 
 .dropdown-content .buttonVT:hover {
-  background-color: #FF33E9;
+  background-color: #C133FF;
 }
 
 .dropdown-content .buttonKA:hover {
-  background-color: #ECFF33;
+  background-color: #FFE633;
 }
 
 .dropdown:hover .dropdown-content {
@@ -76,7 +76,6 @@
 }
 
 .buttonVT:hover {
-  background-color: white;
   color: black;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
@@ -141,11 +140,11 @@
 
 .buttonRuns{
   position: absolute;
-  left: 760px;
-  top: 10px;
-  padding: 10px;
-  background-color: #338AFF;
   color: white;
+  left: 760px;
+  top: 8px;
+  padding: 10px;
+  background-color: #FF6B33;
   text-align: center;
   border-radius: 50%;
   font-size: 15px;
