@@ -8,11 +8,19 @@
 >![](thumbnails/countplot_runs.jpg)
 >![](thumbnails/barplot_activities.jpg)
 
-## tutorials
+## Tutorials
 Tutorial to follow: </br>
 https://towardsdatascience.com/using-the-strava-api-and-pandas-to-explore-your-activity-data-d94901d9bfde </br>
 Video walkthrough: </br>
 https://www.youtube.com/watch?v=2FPNb1XECGs&list=PLO6KswO64zVvcRyk0G0MAzh5oKMLb6rTW&index=4 </br>
+
+## Setup
+1. create a virtual env with python version >=3.7.7.
+2. `pip install -r requirements.txt`.
+3. run `jupyter notebook` to run `strava_activities.ipynb`.
+4. when you have clean run.csv and walk.csv files you can move further.
+5. to start the Flask instance - run in terminal `python app.py`.
+6. open your browser http://127.0.0.1:5001/runs.
 
 ## strava_activities.ipynb
 - Getting a couple of pages, each with 200 activities.</br>
@@ -24,15 +32,9 @@ https://www.youtube.com/watch?v=2FPNb1XECGs&list=PLO6KswO64zVvcRyk0G0MAzh5oKMLb6
 ## templates/leaflet_*.html 
 - `app.py` reads run/walk.csvs, takes polyline information and forwards it to the 2 template files - one for each activity - to visualize them.
 
-## start
-- To start the Flask instance - run in terminal `python app.py`. </br>
-- Open your browser http://127.0.0.1:5001/X , X can be runs or walks. </br>
-
 ## NEW
 - Locations drop-down menu with 2 buttons, one for Veliko Tarnovo and one for Karlsruhe. It just saves time dragging from one location to the other, and vice-versa.</br>
 - 2 new buttons. Walks/Runs, each one appears next to the drop-down menu. Redirects automatically instead of changing the link manually</br>
 
 ## TODO
-1. Add a drop-down menu named 'Locations' and when clicked it will show both (now existing) buttons.</br>
-
 overlay all run and walk workouts with different colors.
