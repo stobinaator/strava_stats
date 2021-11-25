@@ -23,11 +23,10 @@ https://www.youtube.com/watch?v=2FPNb1XECGs&list=PLO6KswO64zVvcRyk0G0MAzh5oKMLb6
 6. open your browser http://127.0.0.1:5001/.
 
 ## strava_activities.ipynb
-- Getting a couple of pages, each with 200 activities.</br>
+- Getting all activities from Strava.</br>
 - Original raw DataFrame is saved to a .csv file. </br>
-- `Run` & `Walk` are filtered and saved </br>
-- Activities dataset is converted to a Pandas DataFrame and columns are renamed and certain values converted. After that only a certain amount of colums are left for the next steps. Again saved.</br>
-- Data now again read and can be visualized with different graphs (seaborn) </br>
+- `Run` & `Walk` - Activities are filtered and saved separately for routes visualizations.</br>
+- Raw Activities dataset is converted to a Pandas DataFrame and columns are renamed and certain values converted. Data is ready to be visualized.</br>
 
 ## templates/leaflet_*.html 
 - `app.py` reads run/walk.csvs, takes polyline information and forwards it to the 2 template files - one for each activity - to visualize them.
