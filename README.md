@@ -19,9 +19,8 @@ https://www.youtube.com/watch?v=2FPNb1XECGs&list=PLO6KswO64zVvcRyk0G0MAzh5oKMLb6
 2. `pip install -r requirements.txt`.
 3. - either run `jupyter notebook` to run `strava_activities.ipynb`. 
    - or just run `python3 strava_acts.py`
-4. when you have clean run.csv and walk.csv files you can move further.
-5. to start the Flask instance - run in terminal `python3 app.py`.
-6. open your browser using ULR: `http://127.0.0.1:5001/`.
+4. run in terminal `python3 app.py` - in order to start the Flask instance
+6. open ULR: `http://127.0.0.1:5001/`.
 
 ## strava_activities.ipynb
 - Getting all available activities from Strava.</br>
@@ -38,4 +37,5 @@ https://www.youtube.com/watch?v=2FPNb1XECGs&list=PLO6KswO64zVvcRyk0G0MAzh5oKMLb6
 - [x] 2 new buttons. Walks/Runs, each one appears next to the drop-down menu. Redirects automatically instead of changing the link manually</br>
 
 ## TODO
+- [ ] remove the processing part from notebook file and leave only the visualization
 - [ ] overlay all run and walk workouts with different colors.
