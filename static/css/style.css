@@ -1,18 +1,19 @@
-#map{
-  top: 8px;
-  width: 100%;
-  height: 94%;
+* {
+  box-sizing: border-box;
 }
 
-.imgContainer{
+.imgContainer {
   float:left;
 }
 
-.stats-logo {
-  left: 35px;
+#map{
+  position: relative;
+  width: 100%;
+  height: 89.3%;
 }
 
 .drop-span {
+  position:relative;
   background-color: black;
   color: white;
   padding: 10px 15px 10px 16px;
@@ -23,10 +24,11 @@
 }
 
 .dropdown {
-  top: 10px;
-  left: 560px;
+  top: -42px;
+  left: 580px;
+  width: 50px;
   position: relative;
-  display: inline-block;
+
 }
 
 .dropdown-content {
@@ -112,7 +114,7 @@
 .buttonWalks{
   position: absolute;
   left: 760px;
-  top: 8px;
+  top: 15px;
   padding: 10px;
   background-color: #5BFF33;
   color: white;
@@ -144,7 +146,7 @@
   position: absolute;
   color: white;
   left: 760px;
-  top: 8px;
+  top: 15px;
   padding: 10px;
   background-color: #FF6B33;
   text-align: center;

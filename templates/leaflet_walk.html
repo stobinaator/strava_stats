@@ -1,40 +1,51 @@
 <html>
-  <head>
-    <title>Mapping my walks</title>
-    <script src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js"></script>
-    <script type="text/javascript" src="https://rawgit.com/jieter/Leaflet.encoded/master/Polyline.encoded.js"></script>
 
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css" />
-    <link href="/static/css/style.css" rel="stylesheet" type="text/css" />
-  </head>
+<head>
+  <title>Mapping my walks</title>
+  <script src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js"></script>
+  <script type="text/javascript" src="https://rawgit.com/jieter/Leaflet.encoded/master/Polyline.encoded.js"></script>
 
-  <body>
-    <!-- images -->
-    <div class="imgContainer">
-      <img src="{{ url_for('static', filename='images/strava-2.png') }}" alt="Strava Logo" width="40" height="38">
-    </div>
-    <div class="imgContainer">
-      <img src="{{ url_for('static', filename='images/strava-stats2.png') }}" class="stats-logo" alt="Stats Logo" width="40" height="38">
-    </div>
-    
-    <!-- dropdown buttons -->
-    <div class="dropdown">
-      <span class="drop-span">Locations</span>
-      <div class="dropdown-content" style="left:0;">
-        <button class="buttonVT" onclick="vtWalkFunction()">V.Tarnovo</button>
-        <button class="buttonKA" onclick="kaWalkFunction()">Karlsruhe</button>
-      </div>
-    </div>
-    <button class="buttonRuns"><a href="/runs">Runs</a></button>
-    
-    <nav id="nav" class="nav-main">
-      <div id="map" style="width: 100%; height: 94%"></div>
-    </nav>
-    <script type="text/javascript" src="/static/js/main.js"></script>
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css" />
+  <link href="/static/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <!-- images -->
+  <div class="imgContainer">
+    <img src="{{ url_for('static', filename='images/strava-2.png') }}" class="strava-logo" alt="Strava Logo" width="40"
+      height="38">
+  </div>
+  <div class="imgContainer">
+    <img src="{{ url_for('static', filename='images/strava-stats2.png') }}" class="stats-logo" alt="Stats Logo"
+      width="40" height="38">
+  </div>
+  <div class="imgContainer">
+    <h1 class="welcome-msg"></h1>
+    <script type="text/javascript" src="/static/js/welcome_msg.js"></script>
     <script type="text/javascript">
-      vtWalkFunction({{ walks | safe }});
-      kaWalkFunction({{ walks | safe }});
+      welcome_user();
     </script>
-    
-  </body>
+  </div>
+
+  <!-- dropdown buttons -->
+  <div class="dropdown">
+    <span class="drop-span">Locations</span>
+    <div class="dropdown-content" style="left:0;">
+      <button class="buttonVT" onclick="vtWalkFunction()">V.Tarnovo</button>
+      <button class="buttonKA" onclick="kaWalkFunction()">Karlsruhe</button>
+    </div>
+  </div>
+  <button class="buttonRuns"><a href="/runs">Runs</a></button>
+
+  <nav id="nav" class="nav-main">
+    <div id="map"></div>
+  </nav>
+  <script type="text/javascript" src="/static/js/main.js"></script>
+  <script type="text/javascript">
+    vtWalkFunction({{ walks | safe }});
+    kaWalkFunction({{ walks | safe }});
+  </script>
+
+</body>
+
 </html>
