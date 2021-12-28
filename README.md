@@ -17,8 +17,8 @@ https://www.youtube.com/watch?v=2FPNb1XECGs&list=PLO6KswO64zVvcRyk0G0MAzh5oKMLb6
 ## Setup
 1. create a virtual env with python version >=3.7.7.
 2. `pip install -r requirements.txt`.
-3.1 either run `jupyter notebook` to run `strava_activities.ipynb`.
-3.2 or just run `python3 strava_acts.py`
+3. - either run `jupyter notebook` to run `strava_activities.ipynb`. 
+   - or just run `python3 strava_acts.py`
 4. when you have clean run.csv and walk.csv files you can move further.
 5. to start the Flask instance - run in terminal `python3 app.py`.
 6. open your browser using ULR: `http://127.0.0.1:5001/`.
