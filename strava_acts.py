@@ -4,6 +4,8 @@ import json
 import os
 import pandas as pd
 from typing import Tuple
+from datetime import datetime
+from typing import List
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
@@ -31,12 +33,12 @@ def retrieve_raw_activities(payload_dict: dict) -> pd.DataFrame:
     It tries to get X pages each with 200 activities from strava
     Saves each page in a DF and concatenates it with the already retrieved activities
     """
-    print("Downloading data")
+    print("Downloading data...")
     res = requests.post(AUTH_URL, data=payload_dict["payload"], verify=False)
     header = {"Authorization": "Bearer " + res.json()["access_token"]}
 
     my_activities = pd.DataFrame()
-    for page in range(1, 8):
+    for page in range(1, 10):
         my_dataset = requests.get(
             ACTIVITIES_URL, headers=header, params={"per_page": 200, "page": page}
         ).json()
@@ -99,27 +101,51 @@ def structure_activities() -> pd.DataFrame:
         )
     )
 
+def drop_na(a, b, c, d):
+    runs_2021_maps = a.dropna()
+    runs_2022_maps = b.dropna()
+    runs_maps = c.dropna()
+    walks_maps = d.dropna()
 
-def split_activities(my_activities: pd.DataFrame) -> DataFrameTuple:
+    return runs_2021_maps,runs_2022_maps,runs_maps,walks_maps
+
+def split_runs_certain_year(my_activities: pd.DataFrame, year: int):
     """
-    Functions splits the cleaned up activities in 2 further subcategories:
-    run_maps and walk_maps and drops any NaN. The 2 maps will be used
-    for visualization with Flask.
+    Converts the start_date to object and checks if the year is equal to year
     """
+    runs = pd.DataFrame()
+    for _, row in my_activities[my_activities['type'] == 'Run'].iterrows():
+        date_time_obj = datetime.strptime(row.start_date.split("T")[0], '%Y-%m-%d')
+        if date_time_obj.year == year:
+            runs = runs.append(row)
+    return runs[['id', 'map.summary_polyline']]
+
+
+def split_activities(my_activities: pd.DataFrame) -> pd.DataFrame:
+    """
+    Function splits the cleaned up activities in X further subcategories:
+    for example runs_2022_maps, run_maps and walk_maps and drops any NaN. 
+    The X maps will be used for visualization with Flask.
+    """
+    print("Splitting activities")
+    runs_2021_maps = split_runs_certain_year(my_activities, 2021)
+    runs_2022_maps = split_runs_certain_year(my_activities, 2022)
     runs_maps = my_activities[my_activities["type"] == "Run"][
         ["id", "map.summary_polyline"]
     ]
     walks_maps = my_activities[my_activities["type"] == "Walk"][
         ["id", "map.summary_polyline"]
     ]
-    runs_maps = runs_maps.dropna()
-    walks_maps = walks_maps.dropna()
-    return runs_maps, walks_maps
+    
+    return drop_na(runs_2021_maps, runs_2022_maps, runs_maps, walks_maps)
 
 
-def save_runs_walks(runs_maps: pd.DataFrame, walks_maps: pd.DataFrame) -> None:
-    runs_maps.to_csv(f"{cd}/csvs/clean/runs.csv")
-    walks_maps.to_csv(f"{cd}/csvs/clean/walks.csv")
+def save_runs_walks(two_one: pd.DataFrame, two_two: pd.DataFrame, runs:pd.DataFrame, walks:pd.DataFrame) -> None:
+    print("Saving activities")
+    two_one.to_csv(f"{cd}/csvs/clean/runs_2021.csv")
+    two_two.to_csv(f"{cd}/csvs/clean/runs_2022.csv")
+    runs.to_csv(f"{cd}/csvs/clean/runs.csv")
+    walks.to_csv(f"{cd}/csvs/clean/walks.csv")
 
 
 def clean_up_activities(my_activities: pd.DataFrame) -> pd.DataFrame:
@@ -156,13 +182,13 @@ def main() -> None:
     save_raw(retrieve_raw_activities(payload_dict=data))
 
     struct_activities = structure_activities()
-    runs_maps, walks_maps = split_activities(struct_activities)
-    save_runs_walks(runs_maps, walks_maps)
+    a,b,c,d = split_activities(struct_activities)
+    save_runs_walks(two_one=a, two_two=b, runs=c, walks=d)
 
-    activities_lite = clean_up_activities(struct_activities)
-    save_cleaned_activities(activities_lite)
+    # activities_lite = clean_up_activities(struct_activities)
+    # save_cleaned_activities(activities_lite)
 
 
 if __name__ == "__main__":
     main()
-    print("Done!")
+    print("Done! You can now run 'python3 app.py'")
