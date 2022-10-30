@@ -20,6 +20,39 @@ def my_runs():
 
     return render_template("leaflet_run.html", runs = json.dumps(runs))
 
+@app.route('/runs-2018')
+def my_runs_2018():
+    runs_2018 = []
+    with open(f"{cd}/csvs/clean/runs_2018.csv", "r") as runs_file:
+        reader = csv.DictReader(runs_file)
+
+        for row in reader:
+            runs_2018.append(row["map.summary_polyline"])
+
+    return render_template("leaflet_run_2018.html", runs = json.dumps(runs_2018))
+
+@app.route('/runs-2019')
+def my_runs_2019():
+    runs_2019 = []
+    with open(f"{cd}/csvs/clean/runs_2019.csv", "r") as runs_file:
+        reader = csv.DictReader(runs_file)
+
+        for row in reader:
+            runs_2019.append(row["map.summary_polyline"])
+
+    return render_template("leaflet_run_2019.html", runs = json.dumps(runs_2019))
+    
+@app.route('/runs-2020')
+def my_runs_2020():
+    runs_2020 = []
+    with open(f"{cd}/csvs/clean/runs_2020.csv", "r") as runs_file:
+        reader = csv.DictReader(runs_file)
+
+        for row in reader:
+            runs_2020.append(row["map.summary_polyline"])
+
+    return render_template("leaflet_run_2020.html", runs = json.dumps(runs_2020))
+
 @app.route('/runs-2021')
 def my_runs_2021():
     runs_2021 = []
