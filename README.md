@@ -1,3 +1,4 @@
+>![](thumbnails/KA-run-2022.jpg)
 >![](thumbnails/KA-run.jpg)
 >![](thumbnails/KA-walk.jpg)
 >![](thumbnails/VT-run.jpg)
@@ -17,25 +18,7 @@ https://www.youtube.com/watch?v=2FPNb1XECGs&list=PLO6KswO64zVvcRyk0G0MAzh5oKMLb6
 ## Setup
 1. create a virtual env with python version >=3.7.7.
 2. `pip install -r requirements.txt`.
-3. - either run `jupyter notebook` to run `strava_activities.ipynb`. 
-   - or just run `python3 strava_acts.py`
-4. run in terminal `python3 app.py` - in order to start the Flask instance
-6. open ULR: `http://127.0.0.1:5001/`.
+3. run `python3 strava_acts.py`.
+4. when step 3 is finished. it will prompt you to run `python3 app.py` - in order to start the Flask instance.
+5. open ULR: `http://127.0.0.1:5002/runs-YEAR`.
 
-## strava_activities.ipynb
-- Getting all available activities from Strava.</br>
-- Original raw DataFrame is saved to a .csv file. </br>
-- `Run` & `Walk` - Activities are filtered and saved separately for routes visualizations.</br>
-- Raw Activities dataset is converted to a Pandas DataFrame and columns are renamed and certain values converted. Data is then ready to be visualized.</br>
-
-## templates/leaflet_*.html 
-- `app.py` reads run/walk.csvs, takes polyline information and forwards it to the 2 template files - one for each activity - to visualize them.
-
-## DONE
-- [x] Welcome message based on the time of the day. </br>
-- [x] Locations drop-down menu with 2 buttons, one for Veliko Tarnovo and one for Karlsruhe. It just saves time dragging from one location to the other, and vice-versa.</br>
-- [x] 2 new buttons. Walks/Runs, each one appears next to the drop-down menu. Redirects automatically instead of changing the link manually</br>
-
-## TODO
-- [ ] remove the processing part from notebook file and leave only the visualization
-- [ ] overlay all run and walk workouts with different colors.
