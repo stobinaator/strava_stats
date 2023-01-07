@@ -1,16 +1,14 @@
 import pandas as pd
 import os
-from datetime import datetime
 
-cd = os.path.abspath(os.getcwd())
 
 def structure_activities() -> pd.DataFrame:
     """
-    Function retrieves the raw activities and does a couple of things
-    in order to clean up the data a bit.
+    Function get the initial csv with activities
     It changes the column names, drops some columns and renames other.
     Further it converts the data of certain columns.
     """
+    cd = os.path.abspath(os.getcwd())
     return (
         pd.read_csv(f"{cd}/csvs/raw/all_activities_raw.csv")
         .rename(columns=str.lower)
@@ -52,3 +50,28 @@ def structure_activities() -> pd.DataFrame:
             type=lambda x: pd.Categorical(x["type"]),
         )
     )
+
+def clean_up_activities(my_activities: pd.DataFrame) -> pd.DataFrame:
+    """
+    Function leaves only columns that matter to the user
+    """
+    cols = [
+        "upload_id",
+        "name",
+        "type",
+        "distance_km",
+        "moving_time_min",
+        "start_time",
+        "start_date_local",
+        "start_day_name",
+        "timezone",
+        "average_speed_kmh",
+        "max_speed_kmh",
+        "total_elevation_gain",
+        "average_heartrate",
+        "max_heartrate",
+        "achievement_count",
+        "kudos_count",
+        "visibility",
+    ]
+    return my_activities[cols]
