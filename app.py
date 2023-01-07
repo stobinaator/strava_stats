@@ -75,6 +75,17 @@ def my_runs_2022():
 
     return render_template("leaflet_run_2022.html", runs = json.dumps(runs_2022))
 
+@app.route('/runs-2023')
+def my_runs_2023():
+    runs_2023 = []
+    with open(f"{cd}/csvs/clean/runs_2023.csv", "r") as runs_file:
+        reader = csv.DictReader(runs_file)
+
+        for row in reader:
+            runs_2023.append(row["map.summary_polyline"])
+
+    return render_template("leaflet_run_2023.html", runs = json.dumps(runs_2023))
+
 @app.route('/walks')
 def my_walks():
     walks = []

@@ -11,12 +11,12 @@ with open(f"{cd}/config_personal.json") as f:
     data = json.load(f)
 
 def main():
-    # save_raw(retrieve_raw_activities(payload_dict=data))
+    save_raw(retrieve_raw_activities(payload_dict=data))
     activities = structure_activities()
     runs, walks = return_total_runs_walks(activities)
     save_runs_walks(runs, walks)
     
-    for year in [2018, 2019, 2020, 2021, 2022]:
+    for year in [2018, 2019, 2020, 2021, 2022, 2023]:
         splitt = split(activities, year)
         save_split_run(splitt, year)
 
