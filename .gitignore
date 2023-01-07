@@ -1,2 +1,5 @@
+*.pyc
+*.csv
+.DS_Store
 not_needed/
 .ipynb_checkpoints/
