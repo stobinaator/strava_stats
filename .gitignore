@@ -1,5 +1,6 @@
 *.pyc
 *.csv
 .DS_Store
+config_personal.json
 not_needed/
 .ipynb_checkpoints/
