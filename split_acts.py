@@ -1,6 +1,15 @@
 import pandas as pd
 from datetime import datetime
 
+from download_and_save import save_split_run_based_on_year
+
+def split(my_activities: pd.DataFrame) -> pd.DataFrame:
+    
+    for year in [2018, 2019, 2020, 2021, 2022, 2023]:
+        print(f"Splitting activities for year {year}")
+        split_year = split_run_certain_year(my_activities, year=year)
+        split_year = split_year.dropna()
+        save_split_run_based_on_year(split_year, year)
 
 def split_run_certain_year(my_activities: pd.DataFrame, year: int):
     """
@@ -14,14 +23,7 @@ def split_run_certain_year(my_activities: pd.DataFrame, year: int):
     runs = runs.transpose()
     return runs[['id', 'map.summary_polyline']]
 
-def split(my_activities: pd.DataFrame, year: int) -> pd.DataFrame:
-    print(f"Splitting activities for year {year}")
-    
-    split_year = split_run_certain_year(my_activities, year=year)
-    split_year = split_year.dropna()
-    return split_year
-
-def return_total_runs_walks(my_activities: pd.DataFrame) -> pd.DataFrame:
+def split_activities_to_runs_and_walks(my_activities: pd.DataFrame) -> pd.DataFrame:
     runs_maps = my_activities[my_activities["type"] == "Run"][
             ["id", "map.summary_polyline"]
     ]
