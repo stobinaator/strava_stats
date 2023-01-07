@@ -10,7 +10,8 @@ def split_run_certain_year(my_activities: pd.DataFrame, year: int):
     for _, row in my_activities[my_activities['type'] == 'Run'].iterrows():
         date_time_obj = datetime.strptime(row.start_date.split("T")[0], '%Y-%m-%d')
         if date_time_obj.year == year:
-            runs = runs.append(row)
+            runs = pd.concat([runs,row], axis=1)
+    runs = runs.transpose()
     return runs[['id', 'map.summary_polyline']]
 
 def split(my_activities: pd.DataFrame, year: int) -> pd.DataFrame:
