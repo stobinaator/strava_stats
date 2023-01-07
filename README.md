@@ -1,5 +1,4 @@
->![](thumbnails/KA-run-2022.jpg)
->![](thumbnails/KA-run.jpg)
+>![](thumbnails/KA-run-2022.png)
 >![](thumbnails/KA-walk.jpg)
 >![](thumbnails/VT-run.jpg)
 
